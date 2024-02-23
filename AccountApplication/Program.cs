@@ -14,17 +14,15 @@ namespace AccountValueCalculator
             // Chemin du fichier CSV
             string filePath = "Account.csv";
 
-            // Date pour laquelle on souhaite obtenir la valeur du compte
-            DateTime targetDate = new DateTime(2023, 2, 15); // Mettez la date souhaitée ici
+       
+            DateTime targetDate = new DateTime(2023, 2, 23); 
 
-            // Charger les transactions et le solde actuel depuis le fichier CSV
+      
             var transactions = LoadTransactions(filePath);
             decimal currentBalance = GetCurrentBalance(filePath);
 
-            // Calculer la valeur du compte pour la date cible
             decimal accountValue = CalculateAccountValue(transactions, currentBalance, targetDate);
 
-            // Afficher le résultat
             Console.WriteLine($"La valeur du compte le {targetDate.ToShortDateString()} est de {accountValue} EUR.");
         }
 
